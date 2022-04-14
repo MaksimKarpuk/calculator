@@ -11,7 +11,7 @@ const filename = (ext) =>
 module.exports = {
   context: path.resolve(__dirname, "src"),
   mode: "production",
-  entry: "./index.js",
+  entry: "./js/index.js",
   output: { path: path.resolve(__dirname, "dist"), filename: "main.js" },
   devServer: {
     port: 3000,

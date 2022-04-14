@@ -5,7 +5,7 @@ let buttonPlus = document.querySelector(".calculator__btnPlus");
 let buttonMinus = document.querySelector(".calculator__btnMinus");
 let buttonMultiply = document.querySelector(".calculator__btnMultiply");
 let buttonDevide = document.querySelector(".calculator__btnDevide");
-let buttonDelete = document.querySelector(".calculator__btnDelite");
+let buttonDelete = document.querySelector(".calculator__btnDelete");
 let buttonEqually = document.querySelector(".calculator__btnEqually");
 let buttonPoint = document.querySelector(".calculator__btnPoint");
 let calculatorNull = document.querySelector(".calculator__btnNull");
@@ -46,10 +46,10 @@ let functionDelete = () => {
   num = "";
   calcField.value = num;
 };
-buttonDelete.addEventListener("clicl", functionDelete);
+buttonDelete.addEventListener("click", functionDelete);
 
 let functionEqual = () => {
   num = eval(num);
   calcField.value = num;
 };
-buttonEqually.addEventListener("clicl", functionEqual);
+buttonEqually.addEventListener("click", functionEqual);
