@@ -1,0 +1,39 @@
+:root {
+    --black:#000000;
+}
+body {
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.container {
+    max-width: 20rem;
+    border: 1px solid black;
+    margin: 2rem auto;
+ }
+.calculator { 
+    margin: 0 auto;
+}
+.calculator__field {
+    margin: 0 auto;
+ }
+.calculator__fieldArea { 
+    width: 19rem;
+    height: 3rem;
+    margin: 0.3rem;
+}
+.calculator__btn { 
+    width: 19rem;
+    margin: 0.5rem auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+}
+.button {
+    width: 4rem;
+    height: 4rem;
+    border: 1px solid var(--black);
+    cursor: pointer;
+    text-align: center;
+    line-height: 4rem;
+    
+ }
