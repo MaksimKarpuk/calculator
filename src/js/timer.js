@@ -1,22 +1,22 @@
-let minutes = 0;
-let seconds = 0;
 let min = document.querySelector (".min");
 let sec = document.querySelector (".sec");
-let start = document.querySelector (".timerStart");
-let stop = document.querySelector (".timerStop");
-let secField = document.querySelector(".secField");
-let minField = document.querySelector(".minField");
+let start = document.querySelector (".start");
+let stop = document.querySelector (".stop");
 
-function Start() {
-    secField.innerHTML=sec.value;
-    sec.value++;
-    if (sec.value<10)
-    {secField.innerHTML="0"+sec.value}
-    else
-    // else if (seconds>60)
-    // {minField.innerHTML=min.value, minutes++;  }
-    {secField.innerHTML=sec.value};
+function startTimer() {
+    sec.value--;
+    if (sec.value<10) {
+        sec.value="0"+sec.value}
+    else if (sec.value<0) {
+        sec.value=60};
 }
-start.addEventListener("click", setInterval(Start, 1000));
+function interval (){
+    const stopInterval = setInterval(startTimer, 1000)
+}
+start.addEventListener("click", interval);
 
+function timerStop(){
+    clearInterval(stopInterval);
+}
 
+stop.addEventListener("click", timerStop);
