@@ -1,22 +1,45 @@
 let min = document.querySelector (".min");
-let sec = document.querySelector (".sec");
 let start = document.querySelector (".start");
-let stop = document.querySelector (".stop");
-
-function startTimer() {
-    sec.value--;
-    if (sec.value<10) {
-        sec.value="0"+sec.value}
-    else if (sec.value<0) {
-        sec.value=60};
+let stopTimer = document.querySelector (".stop");
+let reset = document.querySelector (".reset");
+let field = document.querySelector (".field");
+let seconds = document.querySelector(".sec")
+let timerInterval
+const timerReset = () => {
+    clearInterval(timerInterval);
+    field.innerHTML="00:00"
+    min.value=0;
+    seconds.value=0;
+    start.removeAttribute("disabled");
 }
-function interval (){
-    const stopInterval = setInterval(startTimer, 1000)
+const timerWork = () => {
+    if (+seconds.value!==0) {
+        +seconds.value--;
+        field.innerHTML = `${+min.value}:${+seconds.value}`;
+    } else  if (+seconds.value===0 && +min.value!==0){
+        seconds.value = 59;
+        +min.value--;
+        field.innerHTML = `${+min.value}:${+seconds.value}`; 
+    } else if (+seconds.value===0 && +min.value===0) {
+        timerReset()
+    }
 }
-start.addEventListener("click", interval);
+const timerStart = () => {
+    if (+seconds.value<0 || +min.value<0) {
+        alert("Неверное значение!")
+        return
+    }
+    timerInterval = setInterval(timerWork,1000);
+    start.setAttribute("disabled", "true");
 
-function timerStop(){
-    clearInterval(stopInterval);
+}
+const timerStop = () => {
+    clearInterval(timerInterval);
+    start.removeAttribute("disabled");
 }
 
-stop.addEventListener("click", timerStop);
+start.addEventListener("click", timerStart);
+stopTimer.addEventListener("click", timerStop);
+reset.addEventListener("click", timerReset);
+
+
