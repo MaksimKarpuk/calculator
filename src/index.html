@@ -36,9 +36,22 @@
           <button value="." class="calculator__btnPoint button"><strong>.</strong></button>
         </div>
       </div>
-      <div class="timer">
-        
-      </div>
+    </div>
+    <div class="timer">
+      <input type="number" class="min" min="0" max="59">
+      <input type="number" class="sec" min="0" max="59">
+      <button class="start">Start</button>
+      <button class="stop">Stop</button>
+      <button class="reset">Reset</button>
+      <p class="field"></p>
+    </div>
+    <div class="weather">
+      <select class="weatherCities">
+        <option value="Brest" class="city">Brest</option>
+        <option value="Minsk" class="city">Minsk</option>
+        <option value="Grodno" class="city">Grodno</option>
+      </select>
+      <div class="weatherArea"></div>
     </div>
   </body>
 </html>
