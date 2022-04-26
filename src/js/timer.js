@@ -19,7 +19,7 @@ const timerWork = () => {
     if (+seconds.value < 10) {
       field.innerHTML = `${+min.value}:0${+seconds.value}`;
     }
-  } else if (+min.value < 10 && +min.value >= 0 && +seconds.value === 0) {
+  } else if (+min.value < 10 && +min.value > 0 && +seconds.value === 0) {
     seconds.value = 59;
     +min.value--;
     field.innerHTML = `0${+min.value}:${+seconds.value}`;
